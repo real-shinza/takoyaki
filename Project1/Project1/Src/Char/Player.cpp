@@ -18,7 +18,7 @@ void Player::InitPlayer()
 	{
 		100.f,
 		WIN_H / 2,
-		10.f,
+		7.f,
 		false,
 		PlayerAttackInterval,
 		true
@@ -47,7 +47,7 @@ void Player::DrawPlayer()
 {
 	if (player_info.IsAlive == true)
 	{
-		t_VertexPos v{ Pos2(player_info.PosX, player_info.PosY), Pos2(0.f, 0.f), Pos2(128.f, 128.f) };
+		t_VertexPos v{ Pos2(player_info.PosX, player_info.PosY), Pos2(0.f, 0.f), Pos2(64.f, 64.f) };
 			m_drawer2d.DrawTexture(v, "Res/Player.png");
 	}
 }
@@ -106,11 +106,11 @@ bool Player::CheckHitEnemies()
 {
 	for (int i = 0; i < EnemiesMaxNum; i++)
 	{
-		if (player_info.IsAlive == true && enemies.GetEnemiesInfo(i).IsAlive == true &&
-			player_info.PosX <= enemies.GetEnemiesInfo(i).PosX + 64.f &&
-			player_info.PosX + 128.f >= enemies.GetEnemiesInfo(i).PosX &&
-			player_info.PosY <= enemies.GetEnemiesInfo(i).PosY + 64.f &&
-			player_info.PosY + 128.f >= enemies.GetEnemiesInfo(i).PosY)
+		if (player_info.IsAlive == true && enemies.GetEnemiesInfo(i).m_IsAlive == true &&
+			player_info.PosX <= enemies.GetEnemiesInfo(i).m_PosX + 64.f &&
+			player_info.PosX + 64.f >= enemies.GetEnemiesInfo(i).m_PosX &&
+			player_info.PosY <= enemies.GetEnemiesInfo(i).m_PosY + 64.f &&
+			player_info.PosY + 64.f >= enemies.GetEnemiesInfo(i).m_PosY)
 		{
 			return true;
 		}

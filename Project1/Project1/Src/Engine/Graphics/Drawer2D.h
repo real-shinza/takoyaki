@@ -28,6 +28,10 @@ public:
 	* @param fileName_ m_ptr_tex_list ‚Ì—v‘f
 	*/
 	void DrawTexture(t_VertexPos v_, std::string fileName_);
+	/**
+	* @brief ŠÈˆÕ”Å Œ»İ”ñ„§
+	*/
+	void DrawTexture(Pos2 v_, std::string fileName_, int numX_, int numY_, int maxNumX_, int maxNumY_);
 
 
 	/**

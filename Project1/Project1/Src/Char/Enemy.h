@@ -2,24 +2,24 @@
 
 #include "../Engine/Graphics/Drawer2D.h"
 
-#define EnemiesMaxNum 15
+#define EnemiesMaxNum 5
 
 enum STATE
 {
 	WAIT,
 	MOVE,
 	CHASE,
-	ATTACK
 };
 
 struct EnemiesInfo
 {
-	float PosX;
-	float PosY;
-	float MoveSpeed;
-	bool IsAlive;
-	int EnemyType;
-	STATE State;
+	float m_PosX;
+	float m_PosY;
+	float m_MoveSpeed;
+	bool m_IsAlive;
+	int m_EnemyType;
+	int m_StateTimer;
+	STATE m_State;
 };
 
 class Enemies
@@ -32,14 +32,14 @@ public:
 	EnemiesInfo GetEnemiesInfo(int num_);
 
 private:
-	void Wait();
-	void Move();
-	void Chase();
-	void Attack();
+	void Wait(int num_);
+	void Move(int num_);
+	void Chase(int num_);
 
 	bool CheckHitBullet();
+	float GetDistance(int num_);
 
-	int CreateInterval;
+	int m_CreateInterval;
 
 	EnemiesInfo enemies_info[EnemiesMaxNum];
 
