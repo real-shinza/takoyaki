@@ -51,10 +51,10 @@ void Drawer2D::DrawTexture(t_VertexPos v_, std::string fileName_)
 		//{ harf_x, harf_y, 0.0f, 1.f,right_tu, bottom_tv},			// 右下
 		//{ harf_x, -harf_y, 0.0f, 1.f,right_tu, top_tv},			// 右上
 
-		{ v_.pos.x - harf_x, v_.pos.y - harf_y, 0.0f, 1.f,left_tu, top_tv},			// 左上
-		{ v_.pos.x + harf_x, v_.pos.y - harf_y, 0.0f, 1.f,right_tu, top_tv},			// 右上
-		{ v_.pos.x + harf_x, v_.pos.y + harf_y, 0.0f, 1.f,right_tu, bottom_tv},			// 右下
-		{ v_.pos.x - harf_x, v_.pos.y + harf_y, 0.0f, 1.f,left_tu, bottom_tv},			// 左下
+		{ v_.pos.x - 32, v_.pos.y - 32, 0.0f, 1.f,left_tu, top_tv},			// 左上
+		{ v_.pos.x + 32, v_.pos.y - 32, 0.0f, 1.f,right_tu, top_tv},			// 右上
+		{ v_.pos.x + 32, v_.pos.y + 32, 0.0f, 1.f,right_tu, bottom_tv},			// 右下
+		{ v_.pos.x - 32, v_.pos.y + 32, 0.0f, 1.f,left_tu, bottom_tv},			// 左下
 	};
 #endif
 

@@ -4,6 +4,14 @@
 
 #define EnemiesMaxNum 15
 
+enum STATE
+{
+	WAIT,
+	MOVE,
+	CHASE,
+	ATTACK
+};
+
 struct EnemiesInfo
 {
 	float PosX;
@@ -11,6 +19,7 @@ struct EnemiesInfo
 	float MoveSpeed;
 	bool IsAlive;
 	int EnemyType;
+	STATE State;
 };
 
 class Enemies
@@ -23,6 +32,11 @@ public:
 	EnemiesInfo GetEnemiesInfo(int num_);
 
 private:
+	void Wait();
+	void Move();
+	void Chase();
+	void Attack();
+
 	bool CheckHitBullet();
 
 	int CreateInterval;

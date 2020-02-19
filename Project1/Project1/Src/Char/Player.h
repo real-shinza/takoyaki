@@ -22,7 +22,7 @@ public:
 	PlayerInfo GetPlayerInfo();
 
 private:
-
+	void PlayerControl();
 	bool CheckHitEnemies();
 	PlayerInfo player_info;
 

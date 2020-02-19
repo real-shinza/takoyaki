@@ -16,7 +16,7 @@ void Bullet::InitBullet()
 		{
 			0.f,
 			0.f,
-			10.f,
+			15.f,
 			false
 		};
 	}
